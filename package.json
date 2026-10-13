@@ -5,8 +5,11 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:static": "DEPLOY_TARGET=github-pages next build",
+    "export": "DEPLOY_TARGET=github-pages next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build:static && touch out/.nojekyll"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
